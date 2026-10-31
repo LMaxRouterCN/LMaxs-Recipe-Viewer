@@ -1,7 +1,8 @@
-原作emilyploszaj/emi,非官方,无任何关联
+原作：emilyploszaj/emi（MIT许可证）。本仓库为其非官方fork，未经原作者认可或背书，沿用MIT许可证。
 
 LMax-1.20 : 1.20/1.20.1的主要版本,1.20分支是旧的
 
+更新日志及修复项请见[releases界面](https://github.com/LMaxRouterCN/LMaxs-Recipe-Viewer/releases)
 
 emi作者在2026年10月31日就"我给issue里的求助者发了我的修复版emi"此事发表讲话:
 
