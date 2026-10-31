@@ -61,3 +61,126 @@ For posterity, the PR mentioned is #1265 which was closed for targeting the wron
 <img width="1912" height="4224" alt="java lang IndexOutOfBoundsException  toIndex = 8 · Issue #969 · emilyploszaj emi" src="https://github.com/user-attachments/assets/6cee8a80-94d4-4aa8-a9a2-5a3a34c632f9" />
 <img width="966" height="808" alt="屏幕截图 2026-11-01 015916" src="https://github.com/user-attachments/assets/a0dc9dab-8966-4670-8a54-9e9250c9ba01" />
 <img width="941" height="504" alt="屏幕截图 2026-11-01 015901" src="https://github.com/user-attachments/assets/61fa40d8-df98-4b5d-a16a-15e876e20328" />
+
+---
+
+---
+
+---
+
+
+## 为什么会有这个 Fork / Why this fork exists
+
+**中文**
+
+本fork只为一个目的而存在：修复上游EMI的一个崩溃bug。
+
+在1.20.1 Forge环境下，通过EMI/JEMI查看Mekanism激光牵引光束
+（laser_tractor_beam）等配方时，`JemiRecipeHandler.createSlotsView`
+中未经校验的 `subList` 结束索引会抛出 `IndexOutOfBoundsException`，
+导致游戏崩溃。
+
+该bug在上游被独立报告至少四次，至今全部未修复：
+
+| 上游issue | 报告人 | 日期 | 状态 |
+|---|---|---|---|
+| #904 | Jacklz | 2025-03-24 | 仍开放 |
+| #949 | CTNOriginals | 2025-05-14 | 仍开放 |
+| #969 | LMaxRouterCN | 2025-05-27 | 仍开放 |
+| MekanismEmpowered#5 | Meatwo310 | 2025-09-07 | — |
+
+修复见commit `cedb10f`：将 `subList` 的结束索引钳制到输入列表长度
+之内。单文件，16行。2026-10-04曾以PR #1265提交上游，2026-10-07被
+维护者关闭（按仓库规范，PR应指向最新版本分支）。维护者其后在#969
+确认 "the fix does appear simple"，并表示 "hopefully resolve it in
+all versions of EMI"。
+
+本fork面向1.20.1 Forge持续维护，沿用上游MIT许可证。基于
+emilyploszaj的EMI，感谢原作。
+
+**English**
+
+This fork exists for one purpose: fixing a crash bug in upstream EMI.
+
+On 1.20.1 Forge, viewing recipes such as Mekanism's laser_tractor_beam
+via EMI/JEMI throws an `IndexOutOfBoundsException` from
+`JemiRecipeHandler.createSlotsView` (an unchecked `subList` end index)
+and crashes the game.
+
+The bug has been independently reported upstream at least four times
+and remains unfixed: #904 (2025-03-24), #949 (2025-05-14),
+#969 (2025-05-27), all still open, plus MekanismEmpowered#5
+(2025-09-07).
+
+The fix (commit `cedb10f`) clamps the `subList` end index to the
+input list size. One file, 16 lines. It was submitted upstream as
+PR #1265 on 2026-10-04 and closed on 2026-10-07 (per repository
+policy, PRs should target the latest version branch). The maintainer
+later acknowledged in #969 that "the fix does appear simple" and
+hopes to "resolve it in all versions of EMI".
+
+Maintained for 1.20.1 Forge under the upstream MIT license.
+Based on EMI by emilyploszaj — credit where due.
+```
+# EMI 崩溃bug事件全记录
+
+所有条目来自GitHub公开记录（REST API逐字核对），时间除注明外均为UTC。
+最后更新：2026-11-01
+
+## 前史
+- 2025-03-24 · Jacklz 报告 #904 "Index out of bounds crash" → 至今开放
+- 2025-05-14 · CTNOriginals 报告 #949（物品悬停崩溃）→ 至今开放
+- 2025-05-15 · CTNOriginals 在 #949 指出同问题已在 #904 报告
+- 2025-09-07 · Lapis256 从 MekanismEmpowered#5（日语报告：ME终端
+  EMI+JEI配方崩溃）交叉引用至 #969
+
+## 报告与修复
+- 2025-05-27 · LMaxRouterCN 报告 #969，附崩溃日志与复现配方链接
+- 2026-02-08 · LMaxRouterCN 完成修复（commit cedb10f，单文件16行），
+  在 #969 与 #949 附上编译文件；同日说明因版本号改动与代码改动
+  混入同一commit，暂缓提PR
+- （#969、#949 在此期间无维护者回应）
+
+## PR
+- 2026-10-04 · LMaxRouterCN 提交 PR #1265（指向1.20分支）
+- 2026-10-05 · link-fgfgui 引用 CONTRIBUTING.md 第17行：PR应指向
+  最新版本分支
+- 2026-10-07 · emilyploszaj 关闭 PR #1265，原话：
+  "This is a reasonable feature PR, but as mentioned you'll need to
+  PR to the latest version."
+
+## 2026-10-30 ～ 11-01
+- 2026-10-30 · Recentiv：因该bug崩溃两次，询问修复计划
+- 2026-10-30 · LMaxRouterCN：修复在代码层面极简单，指向fork的
+  releases页面
+- 2026-10-30 · Recentiv：可惜我使用1.19.2版本
+- 2026-10-31 · emilyploszaj：
+  "Please just PR this fix instead of releasing a fork (without
+  source code?), asking users to download it, and suggesting they
+  use AI. If you can't PR, even just following the MIT license and
+  uploading your source code changes would help me fix this issue
+  myself."
+  （该fork为标准GitHub fork，携带全部上游分支与源码）
+- 2026-10-31 · LMaxRouterCN 九点回复（含存档声明，见 #969）
+- 2026-10-31/11-01 · emilyploszaj 回复，承认两处错误，原话：
+  "You're right that I missed that you had more than a readme branch,
+  not familiar with that practice and it's my mistake."
+  "I also don't know why I incorrectly remembered how MIT works, it's
+  embarrassing of me to pretend to hold authority while making
+  mistakes on the basics."
+  同时表示不再回应其余内容，并将 #1265 留档：
+  "For posterity, the PR mentioned is #1265 which was closed for
+  targeting the wrong branch and the fix does appear simple. Leaving
+  this in the comment for when I have time to take a further look at
+  this bug and hopefully resolve it in all versions of EMI."
+
+## 封禁
+- 2026-11-01 0点-1点（北京时间）· LMaxRouterCN 发现被 emilyploszaj 账号级
+  拉黑（GitHub用户级拉黑对外不可见；发现过程有界面截图存档）
+
+## 当前状态（2026-11-01）
+- #904 / #949 / #969：全部开放
+- PR #1265：已关闭，未合并
+- 上游修复：无
+- 本fork（1.20.1 Forge）：修复可用，源码公开
+```
