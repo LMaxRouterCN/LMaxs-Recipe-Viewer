@@ -11,7 +11,8 @@ emi作者在2026年10月31日就"我给issue里的求助者发了我的修复版
 下载它、还建议他们用AI。如果你提不了PR，哪怕只是遵循MIT许可证、把你的
 源代码改动上传，也能让我自己修掉这个问题。
 ```
-在我对其言语中事实性错误的反驳后,其表面上马上认错,然后在背地里将我拉黑
+
+**在我对其言语中事实性错误的反驳后,其表面上马上认错,然后在背地里将我拉黑**
 
 ```
 ———— 11楼 · LMaxRouterCN · 2026-10-31 ————
@@ -42,7 +43,19 @@ emi作者在2026年10月31日就"我给issue里的求助者发了我的修复版
 9. 来啊，反击我。我不会像你一样逃跑躲藏。
 ```
 ```
+———— 13楼 · emilyploszaj（EMI作者/维护者）· 2026-10-31 / 11-01（UTC）· issue #969 ————
 
+【原文】You're right that I missed that you had more than a readme branch, not familiar with that practice and it's my mistake. I also don't know why I incorrectly remembered how MIT works, it's embarrassing of me to pretend to hold authority while making mistakes on the basics.
+
+I'm not going to further engage with the rest of the large message here, excessively confrontational and hostile. I'm sorry, but this is a hobby and I have limited time and a lot of responsibilities.
+
+To any other spectators, I'd prefer discussion here and in general on issues remains on topic and we don't go out of our ways to dunk on people.
+
+For posterity, the PR mentioned is #1265 which was closed for targeting the wrong branch and the fix does appear simple. Leaving this in the comment for when I have time to take a further look at this bug and hopefully resolve it in all versions of EMI.
+
+【译文】你说得对，我确实没注意到你不只有一个 readme 分支——我不了解这种做法，这是我的失误。我也不知道自己为什么把 MIT 许可证的规则记错了。一边端着权威的架子、一边在基础知识上犯错，这确实让我很难堪。那条长消息里的其余内容，我就不再继续回应了——对抗性过强、充满敌意。抱歉，但这毕竟只是我的业余爱好，我时间有限，还有许多别的责任要承担。致其他围观的各位：我希望这里——以及总体上所有 issue 里的讨论——都保持就事论事，也希望我们不要专门去嘲讽别人。留档备查：文中所提的 PR 是 #1265，因指向了错误的分支而被关闭，这个修复看起来确实简单。把这条留言放在这里，等我之后有时间再仔细看看这个 bug，并争取在 EMI 的所有版本中解决它。
 ```
+
+这给你牛逼的,你心里极其清楚错在谁啊,那真是太可惜了,我失去了一个给你道歉的机会
 
 <img width="1912" height="4224" alt="java lang IndexOutOfBoundsException  toIndex = 8 · Issue #969 · emilyploszaj emi" src="https://github.com/user-attachments/assets/6cee8a80-94d4-4aa8-a9a2-5a3a34c632f9" />
