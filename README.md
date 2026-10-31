@@ -59,3 +59,5 @@ For posterity, the PR mentioned is #1265 which was closed for targeting the wron
 这给你牛逼的,你心里极其清楚错在谁啊,那真是太可惜了,我失去了一个给你道歉的机会
 
 <img width="1912" height="4224" alt="java lang IndexOutOfBoundsException  toIndex = 8 · Issue #969 · emilyploszaj emi" src="https://github.com/user-attachments/assets/6cee8a80-94d4-4aa8-a9a2-5a3a34c632f9" />
+<img width="966" height="808" alt="屏幕截图 2026-11-01 015916" src="https://github.com/user-attachments/assets/a0dc9dab-8966-4670-8a54-9e9250c9ba01" />
+<img width="941" height="504" alt="屏幕截图 2026-11-01 015901" src="https://github.com/user-attachments/assets/61fa40d8-df98-4b5d-a16a-15e876e20328" />
